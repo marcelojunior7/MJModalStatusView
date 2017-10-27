@@ -10,6 +10,8 @@
 		576DCA4D1FA2B09300723D0E /* MJModalStatusView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 576DCA431FA2B09300723D0E /* MJModalStatusView.framework */; };
 		576DCA521FA2B09300723D0E /* MJModalStatusViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DCA511FA2B09300723D0E /* MJModalStatusViewTests.swift */; };
 		576DCA541FA2B09300723D0E /* MJModalStatusView.h in Headers */ = {isa = PBXBuildFile; fileRef = 576DCA461FA2B09300723D0E /* MJModalStatusView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		576DCA5E1FA2B44D00723D0E /* MJModalStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DCA5D1FA2B44D00723D0E /* MJModalStatusView.swift */; };
+		576DCA601FA2B45F00723D0E /* MJModalStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576DCA5F1FA2B45F00723D0E /* MJModalStatusView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		576DCA4C1FA2B09300723D0E /* MJModalStatusViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MJModalStatusViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		576DCA511FA2B09300723D0E /* MJModalStatusViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJModalStatusViewTests.swift; sourceTree = "<group>"; };
 		576DCA531FA2B09300723D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		576DCA5D1FA2B44D00723D0E /* MJModalStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJModalStatusView.swift; sourceTree = "<group>"; };
+		576DCA5F1FA2B45F00723D0E /* MJModalStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MJModalStatusView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				576DCA461FA2B09300723D0E /* MJModalStatusView.h */,
 				576DCA471FA2B09300723D0E /* Info.plist */,
+				576DCA5D1FA2B44D00723D0E /* MJModalStatusView.swift */,
+				576DCA5F1FA2B45F00723D0E /* MJModalStatusView.xib */,
 			);
 			path = MJModalStatusView;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					576DCA421FA2B09300723D0E = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					576DCA4B1FA2B09300723D0E = {
@@ -179,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576DCA601FA2B45F00723D0E /* MJModalStatusView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576DCA5E1FA2B44D00723D0E /* MJModalStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +343,7 @@
 		576DCA581FA2B09300723D0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +357,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = marcelo.MJModalStatusView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +366,7 @@
 		576DCA591FA2B09300723D0E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +388,7 @@
 		576DCA5B1FA2B09300723D0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2542JU5UJ;
 				INFOPLIST_FILE = MJModalStatusViewTests/Info.plist;
@@ -390,6 +403,7 @@
 		576DCA5C1FA2B09300723D0E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2542JU5UJ;
 				INFOPLIST_FILE = MJModalStatusViewTests/Info.plist;
