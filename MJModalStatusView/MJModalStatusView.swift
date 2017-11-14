@@ -14,9 +14,10 @@ public class MJModalStatusView: UIView {
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var subheadLabel: UILabel!
     
-    let nibName = "MJModalStatusView"
-    var contentView: UIView!
-    var timer: Timer?
+    fileprivate let nibName = "MJModalStatusView"
+    fileprivate var contentView: UIView!
+    fileprivate var timer: Timer?
+    fileprivate var duration: Double?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +29,7 @@ public class MJModalStatusView: UIView {
         setUpView()
     }
     
-    private func setUpView() {
+    fileprivate func setUpView() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: self.nibName, bundle: bundle)
         self.contentView = nib.instantiate(withOwner: self, options: nil).first as! UIView
@@ -43,7 +44,7 @@ public class MJModalStatusView: UIView {
         subheadLabel.text = ""
     }
     
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         self.layoutIfNeeded()
         self.contentView.layer.masksToBounds = true
         self.contentView.clipsToBounds = true
@@ -56,11 +57,12 @@ public class MJModalStatusView: UIView {
             self.contentView.alpha = 1.0
             self.contentView.transform = .identity
         }) { _ in
-            self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(3.0), target: self, selector: #selector(self.removeSelf), userInfo: nil, repeats: false)
+            guard let duration = self.duration else { return }
+            self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(duration), target: self, selector: #selector(self.removeSelf), userInfo: nil, repeats: false)
         }
     }
     
-    @objc private func removeSelf() {
+    @objc fileprivate func removeSelf() {
         UIView.animate(withDuration: 0.15, animations: {
             self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             self.contentView.alpha = 0.0
@@ -71,22 +73,23 @@ public class MJModalStatusView: UIView {
 }
 
 extension MJModalStatusView {
-    public func set(image: UIImage) {
+    fileprivate func set(image: UIImage) {
         self.imageStatus.image = image
     }
     
-    public func set(headline text: String) {
+    fileprivate func set(headline text: String) {
         self.headlineLabel.text = text
     }
     
-    public func set(subheading text: String) {
+    fileprivate func set(subheading text: String) {
         self.subheadLabel.text = text
     }
     
-    public func show(inView: UIView, headline: String, subheading: String, statusImage: UIImage) {
+    public func show(inView: UIView, headline: String, subheading: String, statusImage: UIImage, duration: Double? = 1.0) {
         inView.addSubview(self)
-        set(image: statusImage)
-        set(headline: headline)
-        set(subheading: subheading)
+        self.duration = duration
+        self.set(image: statusImage)
+        self.set(headline: headline)
+        self.set(subheading: subheading)
     }
 }

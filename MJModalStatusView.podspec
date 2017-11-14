@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MJModalStatusView'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'By far the most fantastic modal status view I have seen in my entire life.'
  
   s.description      = <<-DESC
