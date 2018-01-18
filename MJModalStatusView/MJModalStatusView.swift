@@ -10,9 +10,9 @@ import Foundation
 
 public class MJModalStatusView: UIView {
     
-    @IBOutlet weak var imageStatus: UIImageView!
-    @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var subheadLabel: UILabel!
+    @IBOutlet public weak var imageStatus: UIImageView!
+    @IBOutlet public weak var headlineLabel: UILabel!
+    @IBOutlet public weak var subheadLabel: UILabel!
     
     fileprivate let nibName = "MJModalStatusView"
     fileprivate var contentView: UIView!
